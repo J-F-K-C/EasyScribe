@@ -38,7 +38,7 @@ class Notepad:
         except KeyError:
             pass
 
-        self.__root.title("Unbenannt - Notepad")
+        self.__root.title("Unbenannt - EasyScribe")
 
         screenWidth = self.__root.winfo_screenwidth()
         screenHeight = self.__root.winfo_screenheight()
@@ -100,7 +100,7 @@ class Notepad:
         self.__root.destroy()
 
     def __showAbout(self):
-        showinfo("Notepad")
+        showinfo("EasyScribe")
 
     def __openFile(self):
         file_path = askopenfilename(defaultextension=".txt",
@@ -111,7 +111,7 @@ class Notepad:
             try:
                 with open(file_path, "r") as file:
                     self.__file = file_path
-                    self.__root.title(os.path.basename(self.__file) + " - Notepad")
+                    self.__root.title(os.path.basename(self.__file) + " - EasyScribe")
                     self.__thisTextArea.delete(1.0, END)
                     self.__thisTextArea.insert(1.0, file.read())
             except Exception as e:
@@ -119,7 +119,7 @@ class Notepad:
 
         
     def __newFile(self):
-        self.__root.title("Unbenannt - Notepad")
+        self.__root.title("Unbenannt - EasyScribe")
         self.__file = None
         self.__thisTextArea.delete(1.0,END)
 
@@ -139,7 +139,7 @@ class Notepad:
                 file.write(self.__thisTextArea.get(1.0,END))
                 file.close()
                 
-                self.__root.title(os.path.basename(self.__file) + " - Notepad")
+                self.__root.title(os.path.basename(self.__file) + " - EasyScribe")
                 
             
         else:
@@ -164,7 +164,7 @@ class Notepad:
         try:
             with open(file_path, "r") as file:
                 self.__file = file_path
-                self.__root.title(os.path.basename(self.__file) + " - Notepad")
+                self.__root.title(os.path.basename(self.__file) + " - EasyScribe")
                 self.__thisTextArea.delete(1.0, END)
                 self.__thisTextArea.insert(1.0, file.read())
         except Exception as e:
